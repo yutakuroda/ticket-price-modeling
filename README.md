@@ -34,13 +34,6 @@ $ npm i
 $ npx ts-node src/index.ts
 ```
 
-## Commands for Development
-
-```bash
-$ npm run format
-$ npm test
-```
-
 ## 注意点
 
 - テストケースは網羅的ではない
