@@ -9,9 +9,9 @@ describe("CinemaCitizenPlan", () => {
   const plan = new CinemaCitizenPlan();
 
   describe(".isAvailable", () => {
-    test("シネマシティズン会員の場合、trueを返す", () => {
+    test("シネマシティズン会員かつ59歳未満の場合、trueを返す", () => {
       const cunstomer = new Customer(
-        new Age(50),
+        new Age(59),
         CINEMA_CITIZEN_CATEGORY.Member,
         DISABILITY_CATEGORY.None,
         SCHOOL_CATEGORY.None
@@ -22,8 +22,19 @@ describe("CinemaCitizenPlan", () => {
 
     test("シネマシティズン会員ではない場合、falseを返す", () => {
       const cunstomer = new Customer(
-        new Age(50),
+        new Age(59),
         CINEMA_CITIZEN_CATEGORY.Guest,
+        DISABILITY_CATEGORY.None,
+        SCHOOL_CATEGORY.None
+      );
+
+      expect(plan.isAvailable(cunstomer)).toBe(false);
+    });
+
+    test("60歳以上の場合、falseを返す", () => {
+      const cunstomer = new Customer(
+        new Age(60),
+        CINEMA_CITIZEN_CATEGORY.Member,
         DISABILITY_CATEGORY.None,
         SCHOOL_CATEGORY.None
       );
