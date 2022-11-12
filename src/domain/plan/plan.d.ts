@@ -2,5 +2,5 @@ import { Customer } from "domain/customer/customer";
 
 export interface Plan {
   isAvailable(customer: Customer): boolean;
-  price(now): number;
+  price(now: Date): number;
 }

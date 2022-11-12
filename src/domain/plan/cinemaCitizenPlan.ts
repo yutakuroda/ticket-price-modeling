@@ -6,7 +6,7 @@ export class CinemaCitizenPlan implements Plan {
     return true;
   }
 
-  price(): number {
+  price(now: Date): number {
     return 1000;
   }
 }
