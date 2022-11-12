@@ -33,7 +33,7 @@ describe("CinemaCitizenPlan", () => {
       expect(DisabilityPlan.isAvailable(cunstomer)).toBe(false);
     });
 
-    test("障がい者手帳を持ち、かつ高校生未満の場合、falseを返す", () => {
+    test("障がい者手帳を持ち、かつ高校生以下の場合、falseを返す", () => {
       const cunstomer = new Customer(
         new Age(20),
         CINEMA_CITIZEN_CATEGORY.Guest,
