@@ -13,3 +13,10 @@ $ cd ticket-price-modeling
 $ npm i
 $ npx ts-node src/index.ts
 ```
+
+## Commands
+
+```bash
+$ npm run format
+$ npm test
+```
