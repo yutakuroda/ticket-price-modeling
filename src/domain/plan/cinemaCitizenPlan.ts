@@ -4,10 +4,11 @@ import { Plan } from "domain/plan/plan";
 
 export class CinemaCitizenPlan implements Plan {
   isAvailable(cunstomer: Customer): boolean {
-    if (cunstomer.cinemaCitizenCategory === CINEMA_CITIZEN_CATEGORY.Member)
-      return true;
+    if (cunstomer.age.value >= 60) return false;
+    if (cunstomer.cinemaCitizenCategory !== CINEMA_CITIZEN_CATEGORY.Member)
+      return false;
 
-    return false;
+    return true;
   }
 
   price(now: Date): number {
