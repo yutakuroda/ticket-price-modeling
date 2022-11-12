@@ -16,4 +16,6 @@ const cunstomer = new Customer(
 const date = new Date();
 const bestPlan = BestPlanCalculator.calculate(cunstomer, date);
 
-console.log(bestPlan);
+console.log(
+  `最適なプランは${bestPlan.planName()}です。料金は${bestPlan.price()}円です。`
+);
