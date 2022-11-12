@@ -1,3 +1,10 @@
-const hello = (name: string): string => `hello ${name}`;
+import { CheapestPlanCalculator } from "./domain/CheapestPlanCalculator";
+import { Customer } from "./domain/customer";
 
-console.log(hello('world!'));
+// TODO: 他の引数も追加する
+const cunstomer = new Customer(50)
+const now = new Date()
+
+const cheapestPlan = new CheapestPlanCalculator().calculate(cunstomer, now)
+
+console.log(cheapestPlan.price);
