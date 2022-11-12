@@ -40,3 +40,8 @@ $ npx ts-node src/index.ts
 $ npm run format
 $ npm test
 ```
+
+## 注意点
+
+- テストケースは網羅的ではない
+- 小学生以下で障がい者手帳を持つ場合の判定ができていない
