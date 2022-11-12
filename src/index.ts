@@ -8,12 +8,12 @@ import {
 } from "domain/customer";
 
 const cunstomer = new Customer(
-  new Age(50),
+  new Age(70),
   CINEMA_CITIZEN_CATEGORY.Member,
-  DISABILITY_CATEGORY.Handicapped,
+  DISABILITY_CATEGORY.None,
   SCHOOL_CATEGORY.University
 );
 const date = new Date();
 const bestPlan = BestPlanCalculator.calculate(cunstomer, date);
 
-console.log(bestPlan.price(date));
+console.log(bestPlan);
