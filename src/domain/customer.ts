@@ -1,7 +1,7 @@
 export class Customer {
-    age: number
+  age: number;
 
-    constructor(age: number) {
-      this.age = age
-    }
+  constructor(age: number) {
+    this.age = age;
+  }
 }
