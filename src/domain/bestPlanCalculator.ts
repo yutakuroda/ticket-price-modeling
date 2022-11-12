@@ -2,7 +2,7 @@ import { allPlans, Plan } from "domain/plan";
 import { Customer } from "domain/customer";
 
 export class BestPlanCalculator {
-  static calculate(cunstomer: Customer, date: Date): any {
+  static calculate(cunstomer: Customer, date: Date): Plan {
     const availablePlans = this.filterAvailablePlans(allPlans, cunstomer);
     if (availablePlans.length === 0)
       throw new Error("利用できるプランがありません");
