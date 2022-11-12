@@ -9,7 +9,7 @@ import {
 
 const cunstomer = new Customer(
   new Age(70),
-  CINEMA_CITIZEN_CATEGORY.Member,
+  CINEMA_CITIZEN_CATEGORY.Guest,
   DISABILITY_CATEGORY.None,
   SCHOOL_CATEGORY.University
 );
@@ -17,5 +17,7 @@ const date = new Date();
 const bestPlan = BestPlanCalculator.calculate(cunstomer, date);
 
 console.log(
-  `最適なプランは${bestPlan.planName()}です。料金は${bestPlan.price()}円です。`
+  `最適なプランは${bestPlan.planName()}です。料金は${bestPlan.price(
+    date
+  )}円です。`
 );
