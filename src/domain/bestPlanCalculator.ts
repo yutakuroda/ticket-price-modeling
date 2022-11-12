@@ -1,4 +1,4 @@
-import { Plan } from "domain/plan";
+import { Plan } from "domain/plan/plan";
 import { Customer } from "domain/customer/customer";
 
 export class BestPlanCalculator {

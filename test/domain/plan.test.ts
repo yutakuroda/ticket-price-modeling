@@ -1,4 +1,4 @@
-import { Plan } from "domain/plan";
+import { Plan } from "domain/plan/plan";
 
 describe("Plan", () => {
   it(".price", () => {
