@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/yutakuroda/ticket-price-modeling/issues"
   },
-  "homepage": "https://github.com/yutakuroda/ticket-price-modeling#readme"
+  "homepage": "https://github.com/yutakuroda/ticket-price-modeling#readme",
+  "devDependencies": {
+    "typescript": "^4.8.4"
+  }
 }
