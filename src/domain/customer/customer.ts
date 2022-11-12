@@ -5,9 +5,9 @@ import { SCHOOL_CATEGORY } from "domain/customer/schoolCategory";
 
 export class Customer {
   constructor(
-    public age: Age,
-    public cinemaCitizenCategory: CINEMA_CITIZEN_CATEGORY,
-    public disabilityCategory: DISABILITY_CATEGORY,
-    public schoolCategoryCategory: SCHOOL_CATEGORY
+    public readonly age: Age,
+    public readonly cinemaCitizenCategory: CINEMA_CITIZEN_CATEGORY,
+    public readonly disabilityCategory: DISABILITY_CATEGORY,
+    public readonly schoolCategory: SCHOOL_CATEGORY
   ) {}
 }
