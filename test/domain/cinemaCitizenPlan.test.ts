@@ -1,6 +1,6 @@
 import { Age } from "domain/customer/age";
 import { CINEMA_CITIZEN_CATEGORY } from "domain/customer/cinemaCitizenCategory";
-import { CinemaCitizenPlan } from "domain/plan/cinemaCitizenPlan";
+import { CinemaCitizenPlan } from "domain/plan";
 import { Customer } from "domain/customer/customer";
 import { DISABILITY_CATEGORY } from "domain/customer/disabilityCategory";
 import { SCHOOL_CATEGORY } from "domain/customer/schoolCategory";
