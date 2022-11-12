@@ -1,5 +1,5 @@
 import { allPlans, Plan } from "domain/plan";
-import { Customer } from "domain/customer/customer";
+import { Customer } from "domain/customer";
 
 export class BestPlanCalculator {
   static calculate(cunstomer: Customer, now: Date): any {

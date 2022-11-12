@@ -1,5 +1,4 @@
-import { CINEMA_CITIZEN_CATEGORY } from "domain/customer/cinemaCitizenCategory";
-import { Customer } from "domain/customer/customer";
+import { CINEMA_CITIZEN_CATEGORY, Customer } from "domain/customer";
 import { Plan } from "domain/plan/plan";
 
 export class CinemaCitizenPlan implements Plan {

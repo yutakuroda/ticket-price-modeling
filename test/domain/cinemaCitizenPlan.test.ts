@@ -1,9 +1,11 @@
-import { Age } from "domain/customer/age";
-import { CINEMA_CITIZEN_CATEGORY } from "domain/customer/cinemaCitizenCategory";
+import {
+  Age,
+  CINEMA_CITIZEN_CATEGORY,
+  Customer,
+  DISABILITY_CATEGORY,
+  SCHOOL_CATEGORY,
+} from "domain/customer";
 import { CinemaCitizenPlan } from "domain/plan";
-import { Customer } from "domain/customer/customer";
-import { DISABILITY_CATEGORY } from "domain/customer/disabilityCategory";
-import { SCHOOL_CATEGORY } from "domain/customer/schoolCategory";
 
 describe("CinemaCitizenPlan", () => {
   const plan = new CinemaCitizenPlan();
