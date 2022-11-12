@@ -1,0 +1,19 @@
+{
+  "name": "ticket-price-modeling",
+  "version": "1.0.0",
+  "description": "ticket-price-modeling with TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yutakuroda/ticket-price-modeling.git"
+  },
+  "author": "Yuta Kuroda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yutakuroda/ticket-price-modeling/issues"
+  },
+  "homepage": "https://github.com/yutakuroda/ticket-price-modeling#readme"
+}
