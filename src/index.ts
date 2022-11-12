@@ -1,8 +1,8 @@
 import { BestPlanCalculator } from "domain/bestPlanCalculator";
+import { CINEMA_CITIZEN } from "domain/cinemaCitizen";
 import { Customer } from "domain/customer";
 
-// TODO: 他の引数も追加する
-const cunstomer = new Customer(50);
+const cunstomer = new Customer(50, CINEMA_CITIZEN.Member);
 const now = new Date();
 
 const bestPlan = new BestPlanCalculator().calculate(cunstomer, now);
