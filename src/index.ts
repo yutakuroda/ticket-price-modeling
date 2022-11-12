@@ -1,4 +1,4 @@
-import { CheapestPlanCalculator } from "./domain/CheapestPlanCalculator";
+import { CheapestPlanCalculator } from "./domain/cheapestPlanCalculator";
 import { Customer } from "./domain/customer";
 
 // TODO: 他の引数も追加する
@@ -7,4 +7,4 @@ const now = new Date()
 
 const cheapestPlan = new CheapestPlanCalculator().calculate(cunstomer, now)
 
-console.log(cheapestPlan.price);
+console.log(cheapestPlan.price());
