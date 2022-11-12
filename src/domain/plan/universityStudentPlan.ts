@@ -3,7 +3,7 @@ import { Plan } from "domain/plan/plan";
 
 export const UniversityStudentPlan: Plan = class {
   static planName(): string {
-    return "学生（大・専）	";
+    return "学生（大・専）";
   }
 
   static isAvailable(cunstomer: Customer): boolean {
