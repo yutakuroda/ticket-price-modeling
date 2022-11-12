@@ -1,6 +1,4 @@
 export const SCHOOL_CATEGORY = {
-  Preschool: "preschool", // 幼稚園、保育園
-  Elementary: "elementary", // 小学校
   JuniorHighSchool: "juniorHighSchool", // 中学校
   SeniorHighSchool: "seniorHighSchool", // 高校
   VocationalSchool: "vocationalSchool", // 専門学校
