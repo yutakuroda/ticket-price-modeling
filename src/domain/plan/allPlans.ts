@@ -6,6 +6,7 @@ import { UniversityStudentPlan } from "domain/plan/universityStudentPlan";
 import { HighSchoolStudentPlan } from "domain/plan/highSchoolStudentPlan";
 import { InfantAndElementarySchoolStudentPlan } from "domain/plan/infantAndElementarySchoolStudentPlan";
 import { DisabilityPlan } from "domain/plan/disabilityPlan";
+import { DisabilityUnderHighSchoolStudentPlan } from "domain/plan/disabilityUnderHighSchoolStudentPlan";
 import { Plan } from "domain/plan/plan";
 
 export const allPlans: Plan[] = [
@@ -17,4 +18,5 @@ export const allPlans: Plan[] = [
   HighSchoolStudentPlan,
   InfantAndElementarySchoolStudentPlan,
   DisabilityPlan,
+  DisabilityUnderHighSchoolStudentPlan,
 ];
