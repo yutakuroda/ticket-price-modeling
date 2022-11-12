@@ -1,5 +1,5 @@
-import { CheapestPlanCalculator } from "./domain/cheapestPlanCalculator";
-import { Customer } from "./domain/customer";
+import { CheapestPlanCalculator } from "domain/cheapestPlanCalculator";
+import { Customer } from "domain/customer";
 
 // TODO: 他の引数も追加する
 const cunstomer = new Customer(50)

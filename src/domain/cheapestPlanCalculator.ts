@@ -1,4 +1,4 @@
-import { Plan } from './plan';
+import { Plan } from 'domain/plan';
 
 export class CheapestPlanCalculator {
   calculate(cunstomer: any, now: Date): Plan {
