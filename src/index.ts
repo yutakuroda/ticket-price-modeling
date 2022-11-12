@@ -13,9 +13,7 @@ const cunstomer = new Customer(
   DISABILITY_CATEGORY.Handicapped,
   SCHOOL_CATEGORY.University
 );
-
 const now = new Date();
-
 const bestPlan = BestPlanCalculator.calculate(cunstomer, now);
 
-console.log(bestPlan.price());
+console.log(bestPlan.price(now));

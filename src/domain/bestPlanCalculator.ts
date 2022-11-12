@@ -2,12 +2,12 @@ import { allPlans, Plan } from "domain/plan";
 import { Customer } from "domain/customer";
 
 export class BestPlanCalculator {
-  static calculate(cunstomer: Customer, now: Date): any {
+  static calculate(cunstomer: Customer, date: Date): any {
     const availablePlans = this.filterAvailablePlans(allPlans, cunstomer);
     if (availablePlans.length === 0)
       throw new Error("利用できるプランがありません");
 
-    return this.findBestPricePlan(availablePlans, now);
+    return this.findBestPricePlan(availablePlans, date);
   }
 
   private static filterAvailablePlans(
@@ -17,9 +17,9 @@ export class BestPlanCalculator {
     return allPlans.filter((plan) => plan.isAvailable(cunstomer));
   }
 
-  private static findBestPricePlan(availablePlans: Plan[], now: Date): Plan {
+  private static findBestPricePlan(availablePlans: Plan[], date: Date): Plan {
     return availablePlans.reduce((prev, current) => {
-      return prev.price(now) <= current.price(now) ? prev : current;
+      return prev.price(date) <= current.price(date) ? prev : current;
     });
   }
 }
