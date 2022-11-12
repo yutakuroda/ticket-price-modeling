@@ -14,6 +14,6 @@ const cunstomer = new Customer(
 
 const now = new Date();
 
-const bestPlan = new BestPlanCalculator().calculate(cunstomer, now);
+const bestPlan = BestPlanCalculator.calculate(cunstomer, now);
 
 console.log(bestPlan.price());
