@@ -1,8 +1,8 @@
 import { BestPlanCalculator } from "domain/bestPlanCalculator";
-import { CINEMA_CITIZEN_CATEGORY } from "domain/cinemaCitizenCategory";
-import { Customer } from "domain/customer";
-import { DISABILITY_CATEGORY } from "domain/disabilityCategory";
-import { SCHOOL_CATEGORY } from "domain/schoolCategory";
+import { CINEMA_CITIZEN_CATEGORY } from "domain/customer/cinemaCitizenCategory";
+import { Customer } from "domain/customer/customer";
+import { DISABILITY_CATEGORY } from "domain/customer/disabilityCategory";
+import { SCHOOL_CATEGORY } from "domain/customer/schoolCategory";
 
 const cunstomer = new Customer(
   50,
