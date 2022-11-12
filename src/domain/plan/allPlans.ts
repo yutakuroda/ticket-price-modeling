@@ -1,4 +1,4 @@
-import { cinemaCitizenPlan } from "domain/plan/cinemaCitizenPlan";
+import { CinemaCitizenPlan } from "domain/plan/cinemaCitizenPlan";
 import { Plan } from "domain/plan/plan";
 
-export const allPlans: Array<Plan> = [new cinemaCitizenPlan()];
+export const allPlans: Plan[] = [new CinemaCitizenPlan()];

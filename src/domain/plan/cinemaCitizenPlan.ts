@@ -1,7 +1,7 @@
 import { Customer } from "domain/customer/customer";
 import { Plan } from "domain/plan/plan";
 
-export class cinemaCitizenPlan implements Plan {
+export class CinemaCitizenPlan implements Plan {
   isAvailable(cunstomer: Customer): boolean {
     return true;
   }
