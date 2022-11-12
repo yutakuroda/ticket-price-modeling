@@ -8,10 +8,10 @@ import {
 } from "domain/customer";
 
 const cunstomer = new Customer(
-  new Age(20),
+  new Age(10),
   CINEMA_CITIZEN_CATEGORY.Guest,
   DISABILITY_CATEGORY.None,
-  SCHOOL_CATEGORY.JuniorHighSchool
+  SCHOOL_CATEGORY.None
 );
 const date = new Date();
 const bestPlan = BestPlanCalculator.calculate(cunstomer, date);
