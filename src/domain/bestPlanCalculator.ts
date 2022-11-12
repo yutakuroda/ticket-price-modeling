@@ -5,9 +5,8 @@ import { Plan } from "domain/plan/plan";
 export class BestPlanCalculator {
   static calculate(cunstomer: Customer, now: Date): any {
     const availablePlans = this.filterAvailablePlans(allPlans, cunstomer);
-    const bestPricePlan = this.findBestPricePlan(availablePlans, now);
 
-    return bestPricePlan;
+    return this.findBestPricePlan(availablePlans, now);
   }
 
   private static filterAvailablePlans(
