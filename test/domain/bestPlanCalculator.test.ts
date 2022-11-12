@@ -8,11 +8,11 @@ import {
   SCHOOL_CATEGORY,
 } from "domain/customer";
 import { BestPlanCalculator } from "domain/bestPlanCalculator";
-import { HighSchoolStudentPlan } from "domain/plan";
+import { DisabilityPlan, HighSchoolStudentPlan } from "domain/plan";
 
 describe("BestPlanCalculator", () => {
   describe(".calculate", () => {
-    test("シネマシティズン会員の高校生が土日の20時までに英学見る場合、高校生料金になる", () => {
+    test("シネマシティズン会員の高校生が土日の20時までに映画を見る場合、高校生料金になる", () => {
       const cunstomer = new Customer(
         new Age(15),
         CINEMA_CITIZEN_CATEGORY.Member,
@@ -27,6 +27,24 @@ describe("BestPlanCalculator", () => {
 
       expect(BestPlanCalculator.calculate(cunstomer, saturday)).toBe(
         HighSchoolStudentPlan
+      );
+    });
+
+    test("障害者手帳を持つ80歳の人が平日に映画を見る場合、障害者(学生以上)料金になる", () => {
+      const cunstomer = new Customer(
+        new Age(80),
+        CINEMA_CITIZEN_CATEGORY.Guest,
+        DISABILITY_CATEGORY.Handicapped,
+        SCHOOL_CATEGORY.None
+      );
+
+      const weekday = addBusinessDays(new Date(), 1);
+      if (isFirstDayOfMonth(weekday)) addBusinessDays(weekday, 1);
+
+      weekday.setHours(19, 59, 59);
+
+      expect(BestPlanCalculator.calculate(cunstomer, weekday)).toBe(
+        DisabilityPlan
       );
     });
   });
