@@ -6,8 +6,8 @@ import { SCHOOL_CATEGORY } from "domain/customer/schoolCategory";
 export class Customer {
   constructor(
     public age: Age,
-    public cinemaCitizen: CINEMA_CITIZEN_CATEGORY,
-    public disability: DISABILITY_CATEGORY,
-    public schoolCategory: SCHOOL_CATEGORY
+    public cinemaCitizenCategory: CINEMA_CITIZEN_CATEGORY,
+    public disabilityCategory: DISABILITY_CATEGORY,
+    public schoolCategoryCategory: SCHOOL_CATEGORY
   ) {}
 }
