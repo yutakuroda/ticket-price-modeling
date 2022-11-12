@@ -2,12 +2,13 @@ import { BestPlanCalculator } from "domain/bestPlanCalculator";
 import { CINEMA_CITIZEN_CATEGORY } from "domain/cinemaCitizenCategory";
 import { Customer } from "domain/customer";
 import { DISABILITY_CATEGORY } from "domain/disabilityCategory";
+import { SCHOOL_CATEGORY } from "domain/schoolCategory";
 
 const cunstomer = new Customer(
   50,
   CINEMA_CITIZEN_CATEGORY.Member,
-  DISABILITY_CATEGORY.Handicapped
-  //   SCHOOL_CATEGORY.University
+  DISABILITY_CATEGORY.Handicapped,
+  SCHOOL_CATEGORY.University
 );
 const now = new Date();
 
