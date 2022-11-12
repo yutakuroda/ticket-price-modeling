@@ -56,7 +56,7 @@ describe("CinemaCitizenPlan", () => {
     test("映画の日で、土日20時以降の場合、1200円を返す", () => {
       const cinemaSaturday = new Date("2022-10-01T20:00:00.000+09:00");
 
-      expect(SeniorPlan.price(cinemaSaturday)).toBe(10120000);
+      expect(SeniorPlan.price(cinemaSaturday)).toBe(1200);
     });
 
     test("映画の日ではなく、平日20時までの場合、1200円を返す。ただし祝日は考慮していない", () => {

@@ -11,7 +11,7 @@ const cunstomer = new Customer(
   new Age(70),
   CINEMA_CITIZEN_CATEGORY.Guest,
   DISABILITY_CATEGORY.None,
-  SCHOOL_CATEGORY.University
+  SCHOOL_CATEGORY.None
 );
 const date = new Date();
 const bestPlan = BestPlanCalculator.calculate(cunstomer, date);
