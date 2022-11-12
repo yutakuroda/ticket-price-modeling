@@ -1,5 +1,6 @@
-export class Plan {
-  price(): number {
-    return 1000;
-  }
+import { Customer } from "domain/customer/customer";
+
+export interface Plan {
+  isAvailable(customer: Customer): boolean;
+  price(): number;
 }
