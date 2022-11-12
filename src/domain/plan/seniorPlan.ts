@@ -1,4 +1,4 @@
-import { CINEMA_CITIZEN_CATEGORY, Customer } from "domain/customer";
+import { Customer } from "domain/customer";
 import { Plan } from "domain/plan/plan";
 
 export const SeniorPlan: Plan = class {
