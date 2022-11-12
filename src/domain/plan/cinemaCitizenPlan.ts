@@ -11,6 +11,10 @@ export class CinemaCitizenPlan implements Plan {
   }
 
   price(now: Date): number {
-    return 1000;
+    if ([1, 2, 3, 4, 5].includes(now.getDay())) return 1000; // 平日
+    if (now.getHours() >= 20) return 1000; // 20時以降
+    if (now.getDate() === 1) return 1200; // 映画の日(毎月1日)
+
+    return 1300;
   }
 }

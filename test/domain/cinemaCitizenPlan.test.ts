@@ -49,25 +49,25 @@ describe("CinemaCitizenPlan", () => {
 
   describe(".price", () => {
     test("映画の日で、平日20時までの場合、1000円を返す", () => {
-      const cinemaWeekday = new Date(2022, 11, 1, 19, 59, 59);
+      const cinemaWeekday = new Date("2022-11-01T19:59:59.000+09:00");
 
       expect(plan.price(cinemaWeekday)).toBe(1000);
     });
 
     test("映画の日で、平日20時以降の場合、1000円を返す", () => {
-      const cinemaWeekday = new Date(2022, 11, 1, 20, 20, 20);
+      const cinemaWeekday = new Date("2022-11-01T20:00:00.000+09:00");
 
       expect(plan.price(cinemaWeekday)).toBe(1000);
     });
 
     test("映画の日で、土日20時までの場合、1200円を返す", () => {
-      const cinemaSaturday = new Date(2022, 10, 1, 19, 59, 59);
+      const cinemaSaturday = new Date("2022-10-01T19:59:59.000+09:00");
 
       expect(plan.price(cinemaSaturday)).toBe(1200);
     });
 
     test("映画の日で、土日20時以降の場合、1000円を返す", () => {
-      const cinemaSaturday = new Date(2022, 10, 1, 20, 0, 0);
+      const cinemaSaturday = new Date("2022-10-01T20:00:00.000+09:00");
 
       expect(plan.price(cinemaSaturday)).toBe(1000);
     });
