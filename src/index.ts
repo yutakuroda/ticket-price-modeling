@@ -8,9 +8,9 @@ import {
 } from "domain/customer";
 
 const cunstomer = new Customer(
-  new Age(10),
+  new Age(30),
   CINEMA_CITIZEN_CATEGORY.Guest,
-  DISABILITY_CATEGORY.None,
+  DISABILITY_CATEGORY.Handicapped,
   SCHOOL_CATEGORY.None
 );
 const date = new Date();

@@ -4,7 +4,8 @@ import { GeneralPlan } from "domain/plan/generalPlan";
 import { SeniorPlan } from "domain/plan/seniorPlan";
 import { UniversityStudentPlan } from "domain/plan/universityStudentPlan";
 import { HighSchoolStudentPlan } from "domain/plan/highSchoolStudentPlan";
-import { InfantAndElementarySchoolStudentPlan } from "./infantAndElementarySchoolStudentPlan";
+import { InfantAndElementarySchoolStudentPlan } from "domain/plan/infantAndElementarySchoolStudentPlan";
+import { DisabilityPlan } from "domain/plan/disabilityPlan";
 import { Plan } from "domain/plan/plan";
 
 export const allPlans: Plan[] = [
@@ -15,4 +16,5 @@ export const allPlans: Plan[] = [
   UniversityStudentPlan,
   HighSchoolStudentPlan,
   InfantAndElementarySchoolStudentPlan,
+  DisabilityPlan,
 ];
