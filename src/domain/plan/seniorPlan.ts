@@ -3,12 +3,14 @@ import { Plan } from "domain/plan/plan";
 import { Price } from "domain/plan/price";
 
 export const SeniorPlan: Plan = class {
+  static readonly MINIMUM_AGE = 70;
+
   static planName(): string {
     return "シニア（70才以上）";
   }
 
   static isAvailable(cunstomer: Customer): boolean {
-    if (cunstomer.age.value < 70) return false;
+    if (cunstomer.age.value < this.MINIMUM_AGE) return false;
 
     return true;
   }
