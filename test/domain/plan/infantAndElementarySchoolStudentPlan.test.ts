@@ -55,33 +55,33 @@ describe("CinemaCitizenPlan", () => {
     test("映画の日で、平日20時までの場合、1000円を返す", () => {
       const cinemaWeekday = new Date("2022-11-01T19:59:59.000+09:00");
 
-      expect(InfantAndElementarySchoolStudentPlan.price(cinemaWeekday)).toBe(
-        1000
-      );
+      expect(
+        InfantAndElementarySchoolStudentPlan.price(cinemaWeekday).value
+      ).toBe(1000);
     });
 
     test("映画の日で、平日20時以降の場合、1000円を返す", () => {
       const cinemaWeekday = new Date("2022-11-01T20:00:00.000+09:00");
 
-      expect(InfantAndElementarySchoolStudentPlan.price(cinemaWeekday)).toBe(
-        1000
-      );
+      expect(
+        InfantAndElementarySchoolStudentPlan.price(cinemaWeekday).value
+      ).toBe(1000);
     });
 
     test("映画の日で、土日20時までの場合、1000円を返す", () => {
       const cinemaSaturday = new Date("2022-10-01T19:59:59.000+09:00");
 
-      expect(InfantAndElementarySchoolStudentPlan.price(cinemaSaturday)).toBe(
-        1000
-      );
+      expect(
+        InfantAndElementarySchoolStudentPlan.price(cinemaSaturday).value
+      ).toBe(1000);
     });
 
     test("映画の日で、土日20時以降の場合、1000円を返す", () => {
       const cinemaSaturday = new Date("2022-10-01T20:00:00.000+09:00");
 
-      expect(InfantAndElementarySchoolStudentPlan.price(cinemaSaturday)).toBe(
-        1000
-      );
+      expect(
+        InfantAndElementarySchoolStudentPlan.price(cinemaSaturday).value
+      ).toBe(1000);
     });
 
     test("映画の日ではなく、平日20時までの場合、1000円を返す。ただし祝日は考慮していない", () => {
@@ -90,7 +90,9 @@ describe("CinemaCitizenPlan", () => {
 
       weekday.setHours(19, 59, 59);
 
-      expect(InfantAndElementarySchoolStudentPlan.price(weekday)).toBe(1000);
+      expect(InfantAndElementarySchoolStudentPlan.price(weekday).value).toBe(
+        1000
+      );
     });
 
     test("映画の日ではなく、平日20時以降の場合、1000円を返す。ただし祝日は考慮していない", () => {
@@ -99,7 +101,9 @@ describe("CinemaCitizenPlan", () => {
 
       weekday.setHours(20, 0, 0);
 
-      expect(InfantAndElementarySchoolStudentPlan.price(weekday)).toBe(1000);
+      expect(InfantAndElementarySchoolStudentPlan.price(weekday).value).toBe(
+        1000
+      );
     });
 
     test("映画の日ではなく、土日20時までの場合、1000円を返す。ただし祝日は考慮していない", () => {
@@ -108,7 +112,9 @@ describe("CinemaCitizenPlan", () => {
 
       saturday.setHours(19, 59, 59);
 
-      expect(InfantAndElementarySchoolStudentPlan.price(saturday)).toBe(1000);
+      expect(InfantAndElementarySchoolStudentPlan.price(saturday).value).toBe(
+        1000
+      );
     });
 
     test("映画の日ではなく、土日20時以降の場合、1000円を返す。ただし祝日は考慮していない", () => {
@@ -117,7 +123,9 @@ describe("CinemaCitizenPlan", () => {
 
       saturday.setHours(20, 0, 0);
 
-      expect(InfantAndElementarySchoolStudentPlan.price(saturday)).toBe(1000);
+      expect(InfantAndElementarySchoolStudentPlan.price(saturday).value).toBe(
+        1000
+      );
     });
   });
 });

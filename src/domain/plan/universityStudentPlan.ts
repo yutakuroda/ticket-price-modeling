@@ -1,5 +1,6 @@
 import { SCHOOL_CATEGORY, Customer } from "domain/customer";
 import { Plan } from "domain/plan/plan";
+import { Price } from "domain/plan/price";
 
 export const UniversityStudentPlan: Plan = class {
   static planName(): string {
@@ -16,10 +17,10 @@ export const UniversityStudentPlan: Plan = class {
     return false;
   }
 
-  static price(date: Date): number {
-    if (date.getDate() === 1) return 1200; // 映画の日(毎月1日)
-    if (date.getHours() >= 20) return 1400; // 20時以降
+  static price(date: Date): Price {
+    if (date.getDate() === 1) return new Price(1200); // 映画の日(毎月1日)
+    if (date.getHours() >= 20) return new Price(1400); // 20時以降
 
-    return 1500;
+    return new Price(1500);
   }
 };

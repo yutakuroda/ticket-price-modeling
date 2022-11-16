@@ -1,5 +1,6 @@
 import { Customer } from "domain/customer";
 import { Plan } from "domain/plan/plan";
+import { Price } from "domain/plan/price";
 
 export const GeneralPlan: Plan = class {
   static planName(): string {
@@ -10,10 +11,10 @@ export const GeneralPlan: Plan = class {
     return true;
   }
 
-  static price(date: Date): number {
-    if (date.getDate() === 1) return 1200; // 映画の日(毎月1日)
-    if (date.getHours() >= 20) return 1400; // 20時以降
+  static price(date: Date): Price {
+    if (date.getDate() === 1) return new Price(1200); // 映画の日(毎月1日)
+    if (date.getHours() >= 20) return new Price(1400); // 20時以降
 
-    return 1900;
+    return new Price(1900);
   }
 };

@@ -4,6 +4,7 @@ import {
   SCHOOL_CATEGORY,
 } from "domain/customer";
 import { Plan } from "domain/plan/plan";
+import { Price } from "domain/plan/price";
 
 export const DisabilityPlan: Plan = class {
   static planName(): string {
@@ -20,7 +21,7 @@ export const DisabilityPlan: Plan = class {
     return true;
   }
 
-  static price(date: Date): number {
-    return 1000;
+  static price(date: Date): Price {
+    return new Price(1000);
   }
 };

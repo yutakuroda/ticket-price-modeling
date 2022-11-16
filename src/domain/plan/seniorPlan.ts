@@ -1,5 +1,6 @@
 import { Customer } from "domain/customer";
 import { Plan } from "domain/plan/plan";
+import { Price } from "domain/plan/price";
 
 export const SeniorPlan: Plan = class {
   static planName(): string {
@@ -12,7 +13,7 @@ export const SeniorPlan: Plan = class {
     return true;
   }
 
-  static price(date: Date): number {
-    return 1200;
+  static price(date: Date): Price {
+    return new Price(1200);
   }
 };

@@ -1,5 +1,6 @@
 import { CINEMA_CITIZEN_CATEGORY, Customer } from "domain/customer";
 import { Plan } from "domain/plan/plan";
+import { Price } from "domain/plan/price";
 
 export const CinemaCitizenSeniorPlan: Plan = class {
   static planName(): string {
@@ -14,7 +15,7 @@ export const CinemaCitizenSeniorPlan: Plan = class {
     return true;
   }
 
-  static price(date: Date): number {
-    return 1000;
+  static price(date: Date): Price {
+    return new Price(1000);
   }
 };

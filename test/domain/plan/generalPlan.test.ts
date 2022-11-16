@@ -27,25 +27,25 @@ describe("CinemaCitizenPlan", () => {
     test("映画の日で、平日20時までの場合、1200円を返す", () => {
       const cinemaWeekday = new Date("2022-11-01T19:59:59.000+09:00");
 
-      expect(GeneralPlan.price(cinemaWeekday)).toBe(1200);
+      expect(GeneralPlan.price(cinemaWeekday).value).toBe(1200);
     });
 
     test("映画の日で、平日20時以降の場合、1200円を返す", () => {
       const cinemaWeekday = new Date("2022-11-01T20:00:00.000+09:00");
 
-      expect(GeneralPlan.price(cinemaWeekday)).toBe(1200);
+      expect(GeneralPlan.price(cinemaWeekday).value).toBe(1200);
     });
 
     test("映画の日で、土日20時までの場合、1200円を返す", () => {
       const cinemaSaturday = new Date("2022-10-01T19:59:59.000+09:00");
 
-      expect(GeneralPlan.price(cinemaSaturday)).toBe(1200);
+      expect(GeneralPlan.price(cinemaSaturday).value).toBe(1200);
     });
 
     test("映画の日で、土日20時以降の場合、1200円を返す", () => {
       const cinemaSaturday = new Date("2022-10-01T20:00:00.000+09:00");
 
-      expect(GeneralPlan.price(cinemaSaturday)).toBe(1200);
+      expect(GeneralPlan.price(cinemaSaturday).value).toBe(1200);
     });
 
     test("映画の日ではなく、平日20時までの場合、1900円を返す。ただし祝日は考慮していない", () => {
@@ -54,7 +54,7 @@ describe("CinemaCitizenPlan", () => {
 
       weekday.setHours(19, 59, 59);
 
-      expect(GeneralPlan.price(weekday)).toBe(1900);
+      expect(GeneralPlan.price(weekday).value).toBe(1900);
     });
 
     test("映画の日ではなく、平日20時以降の場合、1400円を返す。ただし祝日は考慮していない", () => {
@@ -63,7 +63,7 @@ describe("CinemaCitizenPlan", () => {
 
       weekday.setHours(20, 0, 0);
 
-      expect(GeneralPlan.price(weekday)).toBe(1400);
+      expect(GeneralPlan.price(weekday).value).toBe(1400);
     });
 
     test("映画の日ではなく、土日20時までの場合、1900円を返す。ただし祝日は考慮していない", () => {
@@ -72,7 +72,7 @@ describe("CinemaCitizenPlan", () => {
 
       saturday.setHours(19, 59, 59);
 
-      expect(GeneralPlan.price(saturday)).toBe(1900);
+      expect(GeneralPlan.price(saturday).value).toBe(1900);
     });
 
     test("映画の日ではなく、土日20時以降の場合、1400円を返す。ただし祝日は考慮していない", () => {
@@ -81,7 +81,7 @@ describe("CinemaCitizenPlan", () => {
 
       saturday.setHours(20, 0, 0);
 
-      expect(GeneralPlan.price(saturday)).toBe(1400);
+      expect(GeneralPlan.price(saturday).value).toBe(1400);
     });
   });
 });

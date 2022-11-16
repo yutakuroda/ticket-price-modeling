@@ -19,7 +19,9 @@ export class BestPlanCalculator {
 
   private static findBestPricePlan(availablePlans: Plan[], date: Date): Plan {
     return availablePlans.reduce((prev, current) => {
-      return prev.price(date) <= current.price(date) ? prev : current;
+      return prev.price(date).value <= current.price(date).value
+        ? prev
+        : current;
     });
   }
 }
