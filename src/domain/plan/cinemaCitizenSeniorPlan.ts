@@ -3,12 +3,14 @@ import { Plan } from "domain/plan/plan";
 import { Price } from "domain/plan/price";
 
 export const CinemaCitizenSeniorPlan: Plan = class {
+  static readonly MINIMUM_AGE = 60;
+
   static planName(): string {
     return "シネマシティズン（60才以上）";
   }
 
   static isAvailable(cunstomer: Customer): boolean {
-    if (cunstomer.age.value < 60) return false;
+    if (cunstomer.age.value < this.MINIMUM_AGE) return false;
     if (cunstomer.cinemaCitizenCategory !== CINEMA_CITIZEN_CATEGORY.Member)
       return false;
 
