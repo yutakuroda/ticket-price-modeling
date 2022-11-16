@@ -23,24 +23,26 @@ https://cinemacity.co.jp/ticket/
 
 ```TypeScript
 export const CinemaCitizenPlan: Plan = class {
+  static readonly MAXIMUM_AGE = 59;
+
   static planName(): string {
     return "シネマシティズン";
   }
 
   static isAvailable(cunstomer: Customer): boolean {
-    if (cunstomer.age.value >= 60) return false;
+    if (cunstomer.age.value > this.MAXIMUM_AGE) return false;
     if (cunstomer.cinemaCitizenCategory !== CINEMA_CITIZEN_CATEGORY.Member)
       return false;
 
     return true;
   }
 
-  static price(date: Date): number {
-    if ([1, 2, 3, 4, 5].includes(date.getDay())) return 1000; // 平日
-    if (date.getHours() >= 20) return 1000; // 20時以降
-    if (date.getDate() === 1) return 1200; // 映画の日(毎月1日)
+  static price(date: Date): Price {
+    if ([1, 2, 3, 4, 5].includes(date.getDay())) return new Price(1000); // 平日
+    if (date.getHours() >= 20) return new Price(1000); // 20時以降
+    if (date.getDate() === 1) return new Price(1200); // 映画の日(毎月1日)
 
-    return 1300;
+    return new Price(1300);
   }
 };
 
@@ -71,7 +73,9 @@ export class BestPlanCalculator {
 
   private static findBestPricePlan(availablePlans: Plan[], date: Date): Plan {
     return availablePlans.reduce((prev, current) => {
-      return prev.price(date) <= current.price(date) ? prev : current;
+      return prev.price(date).value <= current.price(date).value
+        ? prev
+        : current;
     });
   }
 }
