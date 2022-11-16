@@ -91,9 +91,22 @@ $ npm i
 
 ## Usage
 
+現在日時を元に最適なプランを選択して表示する
+
 ```bash
-# 現在日時を元に最適なプランを選択して表示する
 $ npx ts-node src/index.ts
+```
+
+テストを実行
+
+```bash
+$ npm test
+```
+
+フォーマットする
+
+```bash
+$ npm run format
 ```
 
 ## 注意点
