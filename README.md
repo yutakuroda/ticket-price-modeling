@@ -37,10 +37,10 @@ export const CinemaCitizenPlan: Plan = class {
     return true;
   }
 
-  static price(date: Date): Price {
-    if ([1, 2, 3, 4, 5].includes(date.getDay())) return new Price(1000); // 平日
-    if (date.getHours() >= 20) return new Price(1000); // 20時以降
-    if (date.getDate() === 1) return new Price(1200); // 映画の日(毎月1日)
+  static price(date: CinemaDate): Price {
+    if (date.isWeekDay()) return new Price(1000);
+    if (date.isLateShow()) return new Price(1000);
+    if (date.isCinemaDay()) return new Price(1200);
 
     return new Price(1300);
   }
@@ -56,7 +56,7 @@ export const CinemaCitizenPlan: Plan = class {
 ```TypeScript
 // src/domain/bestPlanCalculator.ts
 export class BestPlanCalculator {
-  static calculate(cunstomer: Customer, date: Date): Plan {
+  static calculate(cunstomer: Customer, date: CinemaDate): Plan {
     const availablePlans = this.filterAvailablePlans(allPlans, cunstomer);
     if (availablePlans.length === 0)
       throw new Error("利用できるプランがありません");
@@ -71,7 +71,10 @@ export class BestPlanCalculator {
     return allPlans.filter((plan) => plan.isAvailable(cunstomer));
   }
 
-  private static findBestPricePlan(availablePlans: Plan[], date: Date): Plan {
+  private static findBestPricePlan(
+    availablePlans: Plan[],
+    date: CinemaDate
+  ): Plan {
     return availablePlans.reduce((prev, current) => {
       return prev.price(date).value <= current.price(date).value
         ? prev
