@@ -6,6 +6,7 @@ import {
   DISABILITY_CATEGORY,
   SCHOOL_CATEGORY,
 } from "domain/customer";
+import { CinemaDate } from "domain/date";
 
 const cunstomer = new Customer(
   new Age(20),
@@ -13,7 +14,7 @@ const cunstomer = new Customer(
   DISABILITY_CATEGORY.None,
   SCHOOL_CATEGORY.University
 );
-const date = new Date();
+const date = new CinemaDate();
 const bestPlan = BestPlanCalculator.calculate(cunstomer, date);
 
 console.log(

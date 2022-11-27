@@ -1,4 +1,5 @@
 import { CINEMA_CITIZEN_CATEGORY, Customer } from "domain/customer";
+import { CinemaDate } from "domain/date";
 import { Plan } from "domain/plan/plan";
 import { Price } from "domain/plan/price";
 
@@ -17,10 +18,10 @@ export const CinemaCitizenPlan: Plan = class {
     return true;
   }
 
-  static price(date: Date): Price {
-    if ([1, 2, 3, 4, 5].includes(date.getDay())) return new Price(1000); // 平日
-    if (date.getHours() >= 20) return new Price(1000); // 20時以降
-    if (date.getDate() === 1) return new Price(1200); // 映画の日(毎月1日)
+  static price(date: CinemaDate): Price {
+    if (date.isWeekDay()) return new Price(1000);
+    if (date.isLateShow()) return new Price(1000);
+    if (date.isCinemaDay()) return new Price(1200);
 
     return new Price(1300);
   }
