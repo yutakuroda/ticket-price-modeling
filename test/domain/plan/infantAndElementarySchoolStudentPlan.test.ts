@@ -7,6 +7,7 @@ import {
   DISABILITY_CATEGORY,
   SCHOOL_CATEGORY,
 } from "domain/customer";
+import { CinemaDate } from "domain/date";
 import { InfantAndElementarySchoolStudentPlan } from "domain/plan";
 
 describe("CinemaCitizenPlan", () => {
@@ -53,7 +54,7 @@ describe("CinemaCitizenPlan", () => {
 
   describe(".price", () => {
     test("映画の日で、平日20時までの場合、1000円を返す", () => {
-      const cinemaWeekday = new Date("2022-11-01T19:59:59.000+09:00");
+      const cinemaWeekday = new CinemaDate("2022-11-01T19:59:59.000+09:00");
 
       expect(
         InfantAndElementarySchoolStudentPlan.price(cinemaWeekday).value
@@ -61,7 +62,7 @@ describe("CinemaCitizenPlan", () => {
     });
 
     test("映画の日で、平日20時以降の場合、1000円を返す", () => {
-      const cinemaWeekday = new Date("2022-11-01T20:00:00.000+09:00");
+      const cinemaWeekday = new CinemaDate("2022-11-01T20:00:00.000+09:00");
 
       expect(
         InfantAndElementarySchoolStudentPlan.price(cinemaWeekday).value
@@ -69,7 +70,7 @@ describe("CinemaCitizenPlan", () => {
     });
 
     test("映画の日で、土日20時までの場合、1000円を返す", () => {
-      const cinemaSaturday = new Date("2022-10-01T19:59:59.000+09:00");
+      const cinemaSaturday = new CinemaDate("2022-10-01T19:59:59.000+09:00");
 
       expect(
         InfantAndElementarySchoolStudentPlan.price(cinemaSaturday).value
@@ -77,7 +78,7 @@ describe("CinemaCitizenPlan", () => {
     });
 
     test("映画の日で、土日20時以降の場合、1000円を返す", () => {
-      const cinemaSaturday = new Date("2022-10-01T20:00:00.000+09:00");
+      const cinemaSaturday = new CinemaDate("2022-10-01T20:00:00.000+09:00");
 
       expect(
         InfantAndElementarySchoolStudentPlan.price(cinemaSaturday).value
@@ -89,10 +90,11 @@ describe("CinemaCitizenPlan", () => {
       if (isFirstDayOfMonth(weekday)) addBusinessDays(weekday, 1);
 
       weekday.setHours(19, 59, 59);
+      const cinemaWeekday = new CinemaDate(weekday.toISOString());
 
-      expect(InfantAndElementarySchoolStudentPlan.price(weekday).value).toBe(
-        1000
-      );
+      expect(
+        InfantAndElementarySchoolStudentPlan.price(cinemaWeekday).value
+      ).toBe(1000);
     });
 
     test("映画の日ではなく、平日20時以降の場合、1000円を返す。ただし祝日は考慮していない", () => {
@@ -100,10 +102,11 @@ describe("CinemaCitizenPlan", () => {
       if (isFirstDayOfMonth(weekday)) addBusinessDays(weekday, 1);
 
       weekday.setHours(20, 0, 0);
+      const cinemaWeekday = new CinemaDate(weekday.toISOString());
 
-      expect(InfantAndElementarySchoolStudentPlan.price(weekday).value).toBe(
-        1000
-      );
+      expect(
+        InfantAndElementarySchoolStudentPlan.price(cinemaWeekday).value
+      ).toBe(1000);
     });
 
     test("映画の日ではなく、土日20時までの場合、1000円を返す。ただし祝日は考慮していない", () => {
@@ -111,10 +114,11 @@ describe("CinemaCitizenPlan", () => {
       if (isFirstDayOfMonth(saturday)) nextSaturday(saturday);
 
       saturday.setHours(19, 59, 59);
+      const cinemaSaturday = new CinemaDate(saturday.toISOString());
 
-      expect(InfantAndElementarySchoolStudentPlan.price(saturday).value).toBe(
-        1000
-      );
+      expect(
+        InfantAndElementarySchoolStudentPlan.price(cinemaSaturday).value
+      ).toBe(1000);
     });
 
     test("映画の日ではなく、土日20時以降の場合、1000円を返す。ただし祝日は考慮していない", () => {
@@ -122,10 +126,11 @@ describe("CinemaCitizenPlan", () => {
       if (isFirstDayOfMonth(saturday)) nextSaturday(saturday);
 
       saturday.setHours(20, 0, 0);
+      const cinemaSaturday = new CinemaDate(saturday.toISOString());
 
-      expect(InfantAndElementarySchoolStudentPlan.price(saturday).value).toBe(
-        1000
-      );
+      expect(
+        InfantAndElementarySchoolStudentPlan.price(cinemaSaturday).value
+      ).toBe(1000);
     });
   });
 });

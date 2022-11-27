@@ -7,6 +7,7 @@ import {
   DISABILITY_CATEGORY,
   SCHOOL_CATEGORY,
 } from "domain/customer";
+import { CinemaDate } from "domain/date";
 import { BestPlanCalculator } from "domain/bestPlanCalculator";
 import { DisabilityPlan, HighSchoolStudentPlan } from "domain/plan";
 
@@ -24,8 +25,9 @@ describe("BestPlanCalculator", () => {
       if (isFirstDayOfMonth(saturday)) nextSaturday(saturday);
 
       saturday.setHours(19, 59, 59);
+      const cinemaSaturday = new CinemaDate(saturday);
 
-      expect(BestPlanCalculator.calculate(cunstomer, saturday)).toBe(
+      expect(BestPlanCalculator.calculate(cunstomer, cinemaSaturday)).toBe(
         HighSchoolStudentPlan
       );
     });
@@ -42,8 +44,9 @@ describe("BestPlanCalculator", () => {
       if (isFirstDayOfMonth(weekday)) addBusinessDays(weekday, 1);
 
       weekday.setHours(19, 59, 59);
+      const cinemaWeekday = new CinemaDate(weekday);
 
-      expect(BestPlanCalculator.calculate(cunstomer, weekday)).toBe(
+      expect(BestPlanCalculator.calculate(cunstomer, cinemaWeekday)).toBe(
         DisabilityPlan
       );
     });
