@@ -1,4 +1,5 @@
 import { SCHOOL_CATEGORY, Customer } from "domain/customer";
+import { CinemaDate } from "domain/date";
 import { Plan } from "domain/plan/plan";
 import { Price } from "domain/plan/price";
 
@@ -17,9 +18,9 @@ export const UniversityStudentPlan: Plan = class {
     return false;
   }
 
-  static price(date: Date): Price {
-    if (date.getDate() === 1) return new Price(1200); // 映画の日(毎月1日)
-    if (date.getHours() >= 20) return new Price(1400); // 20時以降
+  static price(date: CinemaDate): Price {
+    if (date.isCinemaDay()) return new Price(1200);
+    if (date.isLateShow()) return new Price(1400);
 
     return new Price(1500);
   }

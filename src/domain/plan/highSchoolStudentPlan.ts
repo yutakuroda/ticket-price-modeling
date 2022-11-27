@@ -1,4 +1,5 @@
 import { SCHOOL_CATEGORY, Customer } from "domain/customer";
+import { CinemaDate } from "domain/date";
 import { Plan } from "domain/plan/plan";
 import { Price } from "domain/plan/price";
 
@@ -16,7 +17,7 @@ export const HighSchoolStudentPlan: Plan = class {
     return false;
   }
 
-  static price(date: Date): Price {
+  static price(date: CinemaDate): Price {
     return new Price(1000);
   }
 };
