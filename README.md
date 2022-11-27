@@ -104,7 +104,7 @@ $ npm i
 $ npx ts-node src/index.ts
 ```
 
-テストを実行
+テストを実行する
 
 ```bash
 $ npm test
