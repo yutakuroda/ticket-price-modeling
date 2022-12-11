@@ -8,8 +8,9 @@ import { InfantAndElementarySchoolStudentPlan } from "domain/plan/infantAndEleme
 import { DisabilityPlan } from "domain/plan/disabilityPlan";
 import { DisabilityUnderHighSchoolStudentPlan } from "domain/plan/disabilityUnderHighSchoolStudentPlan";
 import { Plan } from "domain/plan/plan";
+import { Plans } from "domain/plan/plans";
 
-export const allPlans: Plan[] = [
+const allPlansArray = [
   CinemaCitizenPlan,
   CinemaCitizenSeniorPlan,
   GeneralPlan,
@@ -20,3 +21,5 @@ export const allPlans: Plan[] = [
   DisabilityPlan,
   DisabilityUnderHighSchoolStudentPlan,
 ];
+
+export const allPlans = new Plans(allPlansArray);

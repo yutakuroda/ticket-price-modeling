@@ -9,4 +9,5 @@ export * from "domain/plan/infantAndElementarySchoolStudentPlan";
 export * from "domain/plan/disabilityPlan";
 export * from "domain/plan/disabilityUnderHighSchoolStudentPlan";
 export * from "domain/plan/plan";
+export * from "domain/plan/plans";
 export * from "domain/plan/price";
