@@ -1,12 +1,6 @@
 import {
-  CinemaCitizenPlan,
-  CinemaCitizenSeniorPlan,
-  GeneralPlan,
-  SeniorPlan,
-  UniversityStudentPlan,
-  HighSchoolStudentPlan,
-  InfantAndElementarySchoolStudentPlan,
-  DisabilityPlan,
+  allPlans,
+  allPlansArray,
   DisabilityUnderHighSchoolStudentPlan,
   Plans,
 } from "domain/plan";
@@ -19,20 +13,6 @@ import {
 } from "domain/customer";
 import { CinemaDate } from "domain/date";
 
-const plansArray = [
-  CinemaCitizenPlan,
-  CinemaCitizenSeniorPlan,
-  GeneralPlan,
-  SeniorPlan,
-  UniversityStudentPlan,
-  HighSchoolStudentPlan,
-  InfantAndElementarySchoolStudentPlan,
-  DisabilityPlan,
-  DisabilityUnderHighSchoolStudentPlan,
-];
-
-const plans = new Plans(plansArray);
-
 describe("Plans", () => {
   describe("count", () => {
     test("plansが空の場合は0を返す", () => {
@@ -40,7 +20,7 @@ describe("Plans", () => {
     });
 
     test("plansが空ではない場合はplansの数を返す", () => {
-      expect(plans.count()).toBe(plansArray.length);
+      expect(allPlans.count()).toBe(allPlansArray.length);
     });
   });
 
@@ -57,7 +37,7 @@ describe("Plans", () => {
     });
 
     test("plansが空ではない場合は利用可能なplansの数を返す", () => {
-      const availablePlans = plans.availablePlans(cunstomer);
+      const availablePlans = allPlans.availablePlans(cunstomer);
       expect(availablePlans.count()).toBe(1); // generalPlanのみ
       expect(availablePlans.availablePlans(cunstomer).count()).toBe(1);
     });
@@ -69,7 +49,7 @@ describe("Plans", () => {
     });
 
     test("plansが空ではない場合は最安値のplanを返す", () => {
-      expect(plans.bestPricePlan(new CinemaDate())).toBe(
+      expect(allPlans.bestPricePlan(new CinemaDate())).toBe(
         DisabilityUnderHighSchoolStudentPlan
       );
     });
