@@ -10,7 +10,7 @@ import { DisabilityUnderHighSchoolStudentPlan } from "domain/plan/disabilityUnde
 import { Plan } from "domain/plan/plan";
 import { Plans } from "domain/plan/plans";
 
-const allPlansArray = [
+export const allPlansArray: Plan[] = [
   CinemaCitizenPlan,
   CinemaCitizenSeniorPlan,
   GeneralPlan,
