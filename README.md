@@ -1,5 +1,6 @@
 # ticket-price-modeling
 
+aaaaaaaaaaa
 ## お題
 
 https://cinemacity.co.jp/ticket/
