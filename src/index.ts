@@ -12,7 +12,7 @@ const cunstomer = new Customer(
   new Age(20),
   CINEMA_CITIZEN_CATEGORY.Guest,
   DISABILITY_CATEGORY.None,
-  SCHOOL_CATEGORY.University
+  SCHOOL_CATEGORY.University,
 );
 const date = new CinemaDate();
 const bestPlan = BestPlanCalculator.calculate(cunstomer, date);
@@ -20,6 +20,6 @@ const bestPlan = BestPlanCalculator.calculate(cunstomer, date);
 console.log(
   `最適なプランは「${bestPlan.planName()}」です。
     現在日時は${date.toLocaleString()}で、料金は${
-    bestPlan.price(date).value
-  }円です。`
+      bestPlan.price(date).value
+    }円です。`,
 );
