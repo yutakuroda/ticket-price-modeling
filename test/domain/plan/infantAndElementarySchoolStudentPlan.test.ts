@@ -13,40 +13,40 @@ import { InfantAndElementarySchoolStudentPlan } from "domain/plan";
 describe("CinemaCitizenPlan", () => {
   describe(".isAvailable", () => {
     test("3歳以上12際以下の場合、trueを返す", () => {
-      const cunstomer = new Customer(
+      const customer = new Customer(
         new Age(3),
         CINEMA_CITIZEN_CATEGORY.Guest,
         DISABILITY_CATEGORY.None,
         SCHOOL_CATEGORY.None
       );
 
-      expect(InfantAndElementarySchoolStudentPlan.isAvailable(cunstomer)).toBe(
+      expect(InfantAndElementarySchoolStudentPlan.isAvailable(customer)).toBe(
         true
       );
     });
 
     test("3歳以上12際以下の場合、trueを返す", () => {
-      const cunstomer = new Customer(
+      const customer = new Customer(
         new Age(12),
         CINEMA_CITIZEN_CATEGORY.Guest,
         DISABILITY_CATEGORY.None,
         SCHOOL_CATEGORY.None
       );
 
-      expect(InfantAndElementarySchoolStudentPlan.isAvailable(cunstomer)).toBe(
+      expect(InfantAndElementarySchoolStudentPlan.isAvailable(customer)).toBe(
         true
       );
     });
 
     test("それ以外の場合、falseを返す", () => {
-      const cunstomer = new Customer(
+      const customer = new Customer(
         new Age(2),
         CINEMA_CITIZEN_CATEGORY.Guest,
         DISABILITY_CATEGORY.None,
         SCHOOL_CATEGORY.None
       );
 
-      expect(InfantAndElementarySchoolStudentPlan.isAvailable(cunstomer)).toBe(
+      expect(InfantAndElementarySchoolStudentPlan.isAvailable(customer)).toBe(
         false
       );
     });
