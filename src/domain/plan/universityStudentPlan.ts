@@ -8,11 +8,11 @@ export const UniversityStudentPlan: Plan = class {
     return "学生（大・専）";
   }
 
-  static isAvailable(cunstomer: Customer): boolean {
-    if (cunstomer.schoolCategory === SCHOOL_CATEGORY.University) return true;
-    if (cunstomer.schoolCategory === SCHOOL_CATEGORY.VocationalSchool)
+  static isAvailable(customer: Customer): boolean {
+    if (customer.schoolCategory === SCHOOL_CATEGORY.University) return true;
+    if (customer.schoolCategory === SCHOOL_CATEGORY.VocationalSchool)
       return true;
-    if (cunstomer.schoolCategory === SCHOOL_CATEGORY.GraduateSchool)
+    if (customer.schoolCategory === SCHOOL_CATEGORY.GraduateSchool)
       return true;
 
     return false;

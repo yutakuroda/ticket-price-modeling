@@ -8,7 +8,7 @@ export const GeneralPlan: Plan = class {
     return "一般";
   }
 
-  static isAvailable(cunstomer: Customer): boolean {
+  static isAvailable(customer: Customer): boolean {
     return true;
   }
 

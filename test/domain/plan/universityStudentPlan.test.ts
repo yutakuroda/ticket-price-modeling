@@ -13,47 +13,47 @@ import { UniversityStudentPlan } from "domain/plan";
 describe("CinemaCitizenPlan", () => {
   describe(".isAvailable", () => {
     test("大学生の場合、trueを返す", () => {
-      const cunstomer = new Customer(
+      const customer = new Customer(
         new Age(20),
         CINEMA_CITIZEN_CATEGORY.Guest,
         DISABILITY_CATEGORY.None,
         SCHOOL_CATEGORY.University
       );
 
-      expect(UniversityStudentPlan.isAvailable(cunstomer)).toBe(true);
+      expect(UniversityStudentPlan.isAvailable(customer)).toBe(true);
     });
 
     test("専門学校生の場合、trueを返す", () => {
-      const cunstomer = new Customer(
+      const customer = new Customer(
         new Age(20),
         CINEMA_CITIZEN_CATEGORY.Guest,
         DISABILITY_CATEGORY.None,
         SCHOOL_CATEGORY.VocationalSchool
       );
 
-      expect(UniversityStudentPlan.isAvailable(cunstomer)).toBe(true);
+      expect(UniversityStudentPlan.isAvailable(customer)).toBe(true);
     });
 
     test("大学院生の場合、trueを返す", () => {
-      const cunstomer = new Customer(
+      const customer = new Customer(
         new Age(20),
         CINEMA_CITIZEN_CATEGORY.Guest,
         DISABILITY_CATEGORY.None,
         SCHOOL_CATEGORY.GraduateSchool
       );
 
-      expect(UniversityStudentPlan.isAvailable(cunstomer)).toBe(true);
+      expect(UniversityStudentPlan.isAvailable(customer)).toBe(true);
     });
 
     test("それ以外の場合、falseを返す", () => {
-      const cunstomer = new Customer(
+      const customer = new Customer(
         new Age(20),
         CINEMA_CITIZEN_CATEGORY.Guest,
         DISABILITY_CATEGORY.None,
         SCHOOL_CATEGORY.SeniorHighSchool
       );
 
-      expect(UniversityStudentPlan.isAvailable(cunstomer)).toBe(false);
+      expect(UniversityStudentPlan.isAvailable(customer)).toBe(false);
     });
   });
 

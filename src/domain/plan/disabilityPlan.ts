@@ -12,11 +12,11 @@ export const DisabilityPlan: Plan = class {
     return "障がい者（学生以上）";
   }
 
-  static isAvailable(cunstomer: Customer): boolean {
-    if (cunstomer.disabilityCategory === DISABILITY_CATEGORY.None) return false;
-    if (cunstomer.schoolCategory === SCHOOL_CATEGORY.JuniorHighSchool)
+  static isAvailable(customer: Customer): boolean {
+    if (customer.disabilityCategory === DISABILITY_CATEGORY.None) return false;
+    if (customer.schoolCategory === SCHOOL_CATEGORY.JuniorHighSchool)
       return false;
-    if (cunstomer.schoolCategory === SCHOOL_CATEGORY.SeniorHighSchool)
+    if (customer.schoolCategory === SCHOOL_CATEGORY.SeniorHighSchool)
       return false;
 
     return true;

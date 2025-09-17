@@ -10,9 +10,9 @@ export const CinemaCitizenSeniorPlan: Plan = class {
     return "シネマシティズン（60才以上）";
   }
 
-  static isAvailable(cunstomer: Customer): boolean {
-    if (cunstomer.age.value < this.MINIMUM_AGE) return false;
-    if (cunstomer.cinemaCitizenCategory !== CINEMA_CITIZEN_CATEGORY.Member)
+  static isAvailable(customer: Customer): boolean {
+    if (customer.age.value < this.MINIMUM_AGE) return false;
+    if (customer.cinemaCitizenCategory !== CINEMA_CITIZEN_CATEGORY.Member)
       return false;
 
     return true;

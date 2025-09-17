@@ -8,10 +8,10 @@ export const HighSchoolStudentPlan: Plan = class {
     return "中・高校生";
   }
 
-  static isAvailable(cunstomer: Customer): boolean {
-    if (cunstomer.schoolCategory === SCHOOL_CATEGORY.JuniorHighSchool)
+  static isAvailable(customer: Customer): boolean {
+    if (customer.schoolCategory === SCHOOL_CATEGORY.JuniorHighSchool)
       return true;
-    if (cunstomer.schoolCategory === SCHOOL_CATEGORY.SeniorHighSchool)
+    if (customer.schoolCategory === SCHOOL_CATEGORY.SeniorHighSchool)
       return true;
 
     return false;

@@ -13,36 +13,36 @@ import { DisabilityPlan } from "domain/plan";
 describe("CinemaCitizenPlan", () => {
   describe(".isAvailable", () => {
     test("障がい者手帳を持ち、かつ高校生未満ではない場合、trueを返す", () => {
-      const cunstomer = new Customer(
+      const customer = new Customer(
         new Age(20),
         CINEMA_CITIZEN_CATEGORY.Guest,
         DISABILITY_CATEGORY.Handicapped,
         SCHOOL_CATEGORY.University
       );
 
-      expect(DisabilityPlan.isAvailable(cunstomer)).toBe(true);
+      expect(DisabilityPlan.isAvailable(customer)).toBe(true);
     });
 
     test("障がい者手帳を持たない場合、falseを返す", () => {
-      const cunstomer = new Customer(
+      const customer = new Customer(
         new Age(20),
         CINEMA_CITIZEN_CATEGORY.Guest,
         DISABILITY_CATEGORY.None,
         SCHOOL_CATEGORY.University
       );
 
-      expect(DisabilityPlan.isAvailable(cunstomer)).toBe(false);
+      expect(DisabilityPlan.isAvailable(customer)).toBe(false);
     });
 
     test("障がい者手帳を持ち、かつ高校生以下の場合、falseを返す", () => {
-      const cunstomer = new Customer(
+      const customer = new Customer(
         new Age(20),
         CINEMA_CITIZEN_CATEGORY.Guest,
         DISABILITY_CATEGORY.Handicapped,
         SCHOOL_CATEGORY.JuniorHighSchool
       );
 
-      expect(DisabilityPlan.isAvailable(cunstomer)).toBe(false);
+      expect(DisabilityPlan.isAvailable(customer)).toBe(false);
     });
   });
 
