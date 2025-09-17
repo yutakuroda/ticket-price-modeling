@@ -9,4 +9,4 @@ export const SCHOOL_CATEGORY = {
 } as const;
 
 export type SCHOOL_CATEGORY =
-  typeof SCHOOL_CATEGORY[keyof typeof SCHOOL_CATEGORY];
+  (typeof SCHOOL_CATEGORY)[keyof typeof SCHOOL_CATEGORY];

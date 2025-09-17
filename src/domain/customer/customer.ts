@@ -8,6 +8,6 @@ export class Customer {
     public readonly age: Age,
     public readonly cinemaCitizenCategory: CINEMA_CITIZEN_CATEGORY,
     public readonly disabilityCategory: DISABILITY_CATEGORY,
-    public readonly schoolCategory: SCHOOL_CATEGORY
+    public readonly schoolCategory: SCHOOL_CATEGORY,
   ) {}
 }
