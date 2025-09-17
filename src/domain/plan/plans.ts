@@ -9,9 +9,9 @@ export const Plans = class {
     return this.plans.length;
   }
 
-  availablePlans(cunstomer: Customer) {
+  availablePlans(customer: Customer) {
     const availablePlans = this.plans.filter((plan) =>
-      plan.isAvailable(cunstomer),
+      plan.isAvailable(customer)
     );
 
     return new Plans(availablePlans);

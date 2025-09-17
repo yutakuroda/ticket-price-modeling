@@ -25,7 +25,7 @@ describe("Plans", () => {
   });
 
   describe("availablePlans", () => {
-    const cunstomer = new Customer(
+    const customer = new Customer(
       new Age(30),
       CINEMA_CITIZEN_CATEGORY.Guest,
       DISABILITY_CATEGORY.None,
@@ -33,13 +33,13 @@ describe("Plans", () => {
     );
 
     test("plansが空の場合は0を返す", () => {
-      expect(new Plans([]).availablePlans(cunstomer).count()).toBe(0);
+      expect(new Plans([]).availablePlans(customer).count()).toBe(0);
     });
 
     test("plansが空ではない場合は利用可能なplansの数を返す", () => {
-      const availablePlans = allPlans.availablePlans(cunstomer);
+      const availablePlans = allPlans.availablePlans(customer);
       expect(availablePlans.count()).toBe(1); // generalPlanのみ
-      expect(availablePlans.availablePlans(cunstomer).count()).toBe(1);
+      expect(availablePlans.availablePlans(customer).count()).toBe(1);
     });
   });
 

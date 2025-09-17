@@ -13,14 +13,14 @@ import { GeneralPlan } from "domain/plan";
 describe("CinemaCitizenPlan", () => {
   describe(".isAvailable", () => {
     test("trueを返す", () => {
-      const cunstomer = new Customer(
+      const customer = new Customer(
         new Age(20),
         CINEMA_CITIZEN_CATEGORY.Guest,
         DISABILITY_CATEGORY.None,
         SCHOOL_CATEGORY.None
       );
 
-      expect(GeneralPlan.isAvailable(cunstomer)).toBe(true);
+      expect(GeneralPlan.isAvailable(customer)).toBe(true);
     });
   });
 

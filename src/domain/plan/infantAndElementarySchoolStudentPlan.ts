@@ -11,9 +11,9 @@ export const InfantAndElementarySchoolStudentPlan: Plan = class {
     return "幼児（3才以上）・小学生	";
   }
 
-  static isAvailable(cunstomer: Customer): boolean {
-    if (cunstomer.age.value < this.MINIMUM_AGE) return false;
-    if (cunstomer.age.value > this.MAXIMUM_AGE) return false;
+  static isAvailable(customer: Customer): boolean {
+    if (customer.age.value < this.MINIMUM_AGE) return false;
+    if (customer.age.value > this.MAXIMUM_AGE) return false;
 
     return true;
   }

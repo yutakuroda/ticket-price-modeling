@@ -8,14 +8,14 @@ import {
 } from "domain/customer";
 import { CinemaDate } from "domain/date";
 
-const cunstomer = new Customer(
+const customer = new Customer(
   new Age(20),
   CINEMA_CITIZEN_CATEGORY.Guest,
   DISABILITY_CATEGORY.None,
   SCHOOL_CATEGORY.University,
 );
 const date = new CinemaDate();
-const bestPlan = BestPlanCalculator.calculate(cunstomer, date);
+const bestPlan = BestPlanCalculator.calculate(customer, date);
 
 console.log(
   `最適なプランは「${bestPlan.planName()}」です。

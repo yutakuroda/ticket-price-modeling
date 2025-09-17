@@ -3,15 +3,15 @@ import { Age } from "domain/customer";
 describe("Age", () => {
   describe("new", () => {
     test("小数値が与えられた場合、エラーになる", () => {
-      expect(() => new Age(1.5)).toThrowError("年齢が不正です");
+      expect(() => new Age(1.5)).toThrow("年齢が不正です");
     });
 
     test("0未満の整数が与えられた場合、エラーになる", () => {
-      expect(() => new Age(-1)).toThrowError("年齢が不正です");
+      expect(() => new Age(-1)).toThrow("年齢が不正です");
     });
 
     test("201以上の整数が与えられた場合、エラーになる", () => {
-      expect(() => new Age(201)).toThrowError("年齢が不正です");
+      expect(() => new Age(201)).toThrow("年齢が不正です");
     });
 
     test("0以上200以下の整数が与えられた場合、エラーにならない", () => {

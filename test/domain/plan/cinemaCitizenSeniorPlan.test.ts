@@ -13,36 +13,36 @@ import { CinemaCitizenSeniorPlan } from "domain/plan";
 describe("CinemaCitizenSeniorPlan", () => {
   describe(".isAvailable", () => {
     test("シネマシティズン会員かつ60歳以上の場合、trueを返す", () => {
-      const cunstomer = new Customer(
+      const customer = new Customer(
         new Age(60),
         CINEMA_CITIZEN_CATEGORY.Member,
         DISABILITY_CATEGORY.None,
         SCHOOL_CATEGORY.None
       );
 
-      expect(CinemaCitizenSeniorPlan.isAvailable(cunstomer)).toBe(true);
+      expect(CinemaCitizenSeniorPlan.isAvailable(customer)).toBe(true);
     });
 
     test("シネマシティズン会員ではない場合、falseを返す", () => {
-      const cunstomer = new Customer(
+      const customer = new Customer(
         new Age(60),
         CINEMA_CITIZEN_CATEGORY.Guest,
         DISABILITY_CATEGORY.None,
         SCHOOL_CATEGORY.None
       );
 
-      expect(CinemaCitizenSeniorPlan.isAvailable(cunstomer)).toBe(false);
+      expect(CinemaCitizenSeniorPlan.isAvailable(customer)).toBe(false);
     });
 
     test("59歳未満の場合、falseを返す", () => {
-      const cunstomer = new Customer(
+      const customer = new Customer(
         new Age(59),
         CINEMA_CITIZEN_CATEGORY.Member,
         DISABILITY_CATEGORY.None,
         SCHOOL_CATEGORY.None
       );
 
-      expect(CinemaCitizenSeniorPlan.isAvailable(cunstomer)).toBe(false);
+      expect(CinemaCitizenSeniorPlan.isAvailable(customer)).toBe(false);
     });
   });
 

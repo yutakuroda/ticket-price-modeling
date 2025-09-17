@@ -13,25 +13,25 @@ import { SeniorPlan } from "domain/plan";
 describe("CinemaCitizenPlan", () => {
   describe(".isAvailable", () => {
     test("70歳以上の場合、trueを返す", () => {
-      const cunstomer = new Customer(
+      const customer = new Customer(
         new Age(70),
         CINEMA_CITIZEN_CATEGORY.Guest,
         DISABILITY_CATEGORY.None,
         SCHOOL_CATEGORY.None
       );
 
-      expect(SeniorPlan.isAvailable(cunstomer)).toBe(true);
+      expect(SeniorPlan.isAvailable(customer)).toBe(true);
     });
 
     test("70歳未満の場合、falseを返す", () => {
-      const cunstomer = new Customer(
+      const customer = new Customer(
         new Age(69),
         CINEMA_CITIZEN_CATEGORY.Guest,
         DISABILITY_CATEGORY.None,
         SCHOOL_CATEGORY.None
       );
 
-      expect(SeniorPlan.isAvailable(cunstomer)).toBe(false);
+      expect(SeniorPlan.isAvailable(customer)).toBe(false);
     });
   });
 
