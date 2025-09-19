@@ -1,13 +1,13 @@
 export class CinemaDate extends Date {
   readonly MONDAY_OF_WEEK = 1;
-  readonly FRYDAY_OF_WEEK = 5;
+  readonly FRIDAY_OF_WEEK = 5;
   readonly LATE_SHOW_HOUR = 20;
   readonly CINEMA_DAY_OF_MONTH = 1;
 
   isWeekDay(): boolean {
     return (
       this.getDay() >= this.MONDAY_OF_WEEK &&
-      this.getDay() <= this.FRYDAY_OF_WEEK
+      this.getDay() <= this.FRIDAY_OF_WEEK
     );
   }
 
